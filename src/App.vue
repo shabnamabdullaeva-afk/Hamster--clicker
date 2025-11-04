@@ -46,17 +46,20 @@ const buttons =  [
   {
     title:"T-Shirt",
     image: "https://cdn-icons-png.freepik.com/512/17901/17901534.png?ga=GA1.1.929282706.1756977649",
-    function: EnableShirt
+    function: EnableShirt,
+    price:"25 денег"
   },
   {
     title:"Cap",
     image: "https://cdn-icons-png.freepik.com/512/7863/7863443.png?ga=GA1.1.929282706.1756977649",
-    function: EnableCap
+    function: EnableCap,
+    price:"15 денег"
   },
   {
     title:"soda",
      image: "https://cdn-icons-png.freepik.com/512/13519/13519792.png?ga=GA1.1.929282706.1756977649",
-     function: EnableSoda
+     function: EnableSoda,
+     price:"10 денег"
   }
 ]
 
@@ -83,11 +86,11 @@ function clickHamster() {
   <v-app>
   <div class="app">
       <div class="content">
-      <h1>
-        Заголовок!
+      <h1 style="text-align: center;">
+        hamster-clicker
       </h1>
-      <h1> {{ clicks }} </h1>
-      <div>
+      <h1 style="text-align: center"> {{ clicks }} </h1>
+      <div style="justify-items: center;">
         <div @click="clickHamster">
         <img :style="'scale:' + scale"
           style="pointer-events: none;
@@ -96,7 +99,8 @@ function clickHamster() {
           v-if="clicked"
         ></img>
         </div>
-        <div @click="clickHamster">
+        <div style="width: fit-content;" 
+         @click="clickHamster">
         <img :style="'scale:' + scale"
           style="pointer-events: none;
           user-select: none;"
@@ -131,11 +135,16 @@ function clickHamster() {
         v-if="SodaValue"/>
 
       </div>
-      <v-container style="display: flex;">
+      <v-container 
+      style="justify-content: center; 
+      display: flex;">
         <div class="card"  v-for="b in buttons" @click="b.function">
           <p class="card-text">{{ b.title }}</p>
-          <div>
+          <div class="hight">
           <img class="img-card" :src="b.image">
+          </div>
+          <div>
+            <p class="card-text">{{ b.price }}</p>
           </div>
         </div>
       </v-container>
@@ -153,7 +162,7 @@ function clickHamster() {
   border-style: solid;
   border-width: 3px;
   border-color: rgb(47, 103, 153);
-  margin: 20px;
+  margin: px;
   box-sizing: border-box;
   justify-items: center;
 }
@@ -167,7 +176,7 @@ function clickHamster() {
   font-size: medium;
 }
 .img-card{
-  width:70px;
+  width:50px;
   
 }
 img{
@@ -176,6 +185,9 @@ img{
 
 img:active {
 scale: 1.05;
+}
+.hight{
+  max-height: 50px;
 }
 
 button {
