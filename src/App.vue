@@ -156,20 +156,22 @@ function clickHamster() {
 <style scoped>
 
 .card {
-  background-color: rgb(55, 124, 184);
+  background-color: rgb(73, 181, 129);
   width: 100px;
   height: 100px;
   border-style: solid;
   border-width: 3px;
-  border-color: rgb(47, 103, 153);
+  border-color: rgb(38, 126, 89);
   margin: px;
   box-sizing: border-box;
   justify-items: center;
 }
 .content{
   justify-self: center;
-  background-color: rgb(93, 179, 255);
+  background-color: rgba(114, 246, 204, 0.466);
   width: 50%;
+  border-radius: 1cm;
+  backdrop-filter: blur(15px);
 }
 .card-text{
   text-align: center;
