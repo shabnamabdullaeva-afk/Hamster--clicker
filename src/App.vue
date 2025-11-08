@@ -19,6 +19,7 @@ const scale = ref(1)
 const TShirtValue = ref<Boolean>(false)
 const CapValue = ref<Boolean>(false)
 const SodaValue = ref<Boolean>(false)
+const CigaretteValue = ref<Boolean>(false)
 
 function EnableShirt(){
   if(clicks.value >= 25){
@@ -38,7 +39,12 @@ SodaValue.value=true
 clicks.value -= 10
 }
 }
-
+function EnableCigarette(){
+  if(clicks.value >= 5){
+CigaretteValue.value=true
+clicks.value -= 5
+}
+}
 
 const clicked = ref(false)
 
@@ -56,10 +62,16 @@ const buttons =  [
     price:"15 денег"
   },
   {
-    title:"soda",
+    title:"Soda",
      image: "https://cdn-icons-png.freepik.com/512/13519/13519792.png?ga=GA1.1.929282706.1756977649",
      function: EnableSoda,
      price:"10 денег"
+  },
+  {
+    title:"Cigarette",
+     image: "https://cdn-icons-png.freepik.com/512/7853/7853974.png?ga=GA1.1.1988972297.1762586614",
+     function: EnableCigarette,
+     price:"5 денег"
   }
 ]
 
@@ -111,15 +123,15 @@ function clickHamster() {
         </div>
         <img src="./assets/acetone-20251023-173345-290.png"
         style="position: absolute; 
-        left: 25%;
-        top: 40%; 
+        left: 33.5%;
+        top: 55%; 
         scale: 1;
         user-select: none;
         pointer-events: none;" 
         v-if="TShirtValue"/>
         <img src="./assets/acetone-20251023-17582-520.png"
         style="position: absolute; 
-        left: 24.5%;
+        left: 34%;
         top: -1.5%; 
         scale: 0.3;
         user-select: none;
@@ -127,12 +139,22 @@ function clickHamster() {
         v-if="CapValue"/>
         <img src="./assets/pngtree-classic-glass-soda-bottle-png-image_15287878.png"
         style="position: absolute; 
-        left: 25.5%;
-        top: 18%; 
+        left: 35%;
+        top: 23%; 
         scale: 0.3;
         rotate: -37deg;
+        user-select: none;
         pointer-events: none;" 
         v-if="SodaValue"/>
+        <img src="./assets/сигаретка.png"
+        style="position: absolute; 
+        left: 37%;
+        top: 20%; 
+        scale: 0.2;
+        rotate: -37deg;
+        user-select: none;
+        pointer-events: none;" 
+        v-if="CigaretteValue"/>
 
       </div>
       <v-container 
@@ -156,7 +178,7 @@ function clickHamster() {
 <style scoped>
 
 .card {
-  background-color: rgb(73, 181, 129);
+  background-color: rgba(73, 181, 129, 0.164);
   width: 100px;
   height: 100px;
   border-style: solid;
@@ -165,6 +187,7 @@ function clickHamster() {
   margin: px;
   box-sizing: border-box;
   justify-items: center;
+  border-radius: 0.2cm;
 }
 .content{
   justify-self: center;
