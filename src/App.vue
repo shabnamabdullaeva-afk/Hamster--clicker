@@ -110,15 +110,17 @@ function clickHamster() {
             <img :style="'scale:' + scale" style="pointer-events: none;
           user-select: none;" src="./assets/HAMSTER_FUCK.png" v-if="clicked"></img>
           </div>
-          <div style="width: fit-content;" @click="clickHamster">
+
+          <div class="qwe" style="width: fit-content;" @click="clickHamster">
             <img :style="'scale:' + scale" style="pointer-events: none;
           user-select: none;" src='./assets/1598209377643.jpeg' @click="clickHamster" v-if="!clicked"></img>
+            <TshirtComponent/>
+            <CapComponent/>
+            <SodaComponent/>
+            <CigaretteComponent/>
           </div>
-          <TshirtComponent v-if="TShirtValue"/>
-          <CapComponent v-if="CapValue"/>
-          <SodaComponent v-if="SodaValue"/>
-          <CigaretteComponent v-if="CigaretteValue"/>
         </div>
+
         <v-container style="justify-content: center; 
       display: flex;">
           <div class="card" v-for="b in buttons" @click="b.function">
